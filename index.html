@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping List 🛒</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#66B366">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <h1>Shopping List 🛒</h1>
+    <input id="search" type="text" placeholder="Search items...">
+    
+    <div id="toBuySection">
+      <h2 style="color:#66B366;">To Buy</h2>
+      <div id="toBuyList"></div>
+    </div>
+    <div id="laterSection">
+      <h2 style="color:#E67366;">Later</h2>
+      <div id="laterList"></div>
+    </div>
+    
+    <div id="addItem">
+      <input id="itemName" placeholder="Item name">
+      <select id="category">
+        <option>Fruits & Vegs</option>
+        <option>Bread & Pastries</option>
+        <option>Milk & Cheese</option>
+        <option>Meat & Fish</option>
+        <option>Ingredients & Spices</option>
+        <option>Grain Products</option>
+        <option>Snacks & Sweets</option>
+        <option>Beverages</option>
+        <option>Household</option>
+        <option>Care & Health</option>
+        <option>Pet Supplies</option>
+        <option>Other Items</option>
+      </select>
+      <button id="addBtn">Add</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
