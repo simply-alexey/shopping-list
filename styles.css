@@ -38,11 +38,17 @@ h2 { margin-top: 20px; margin-bottom: 8px; font-size: 1.1rem; }
 .card.selected { background: #66B366; }
 .details { font-size: 0.9em; opacity: 0.9; margin-top: 4px; }
 
+/* ✅ Sticky footer for better device compatibility */
 footer {
-  position: fixed; bottom: 0; left: 0; width: 100%;
-  background: #FFFFFF; padding: 10px 0 20px;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #FFFFFF;
+  padding: 10px 0 20px;
   border-top: 1px solid #ddd;
 }
+
 #searchContainer { display: flex; justify-content: center; }
 #search {
   width: calc(100% - 40px); max-width: 90%; padding: 10px;
