@@ -1,6 +1,14 @@
 const STORAGE_KEY = "shoppingItems";
 let items = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
+// ✅ Define save() early so it’s available everywhere
+const save = () => localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+
+// Optional vibration feedback
+function vibrate() {
+  if (navigator.vibrate) navigator.vibrate(30);
+}
+
 // ✅ Default items for first-time users
 if (items.length === 0) {
   items = [
@@ -10,9 +18,6 @@ if (items.length === 0) {
   ];
   save();
 }
-
-const save = () => localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
-function vibrate() { if (navigator.vibrate) navigator.vibrate(30); }
 
 function render() {
   const toBuyList = document.getElementById("toBuyList");
@@ -76,6 +81,7 @@ function render() {
     });
 }
 
+// Add item modal logic
 document.getElementById("addBtnTop").onclick = () =>
   document.getElementById("modalOverlay").classList.add("active");
 
@@ -96,5 +102,8 @@ document.getElementById("confirmAddBtn").onclick = () => {
   document.getElementById("modalOverlay").classList.remove("active");
 };
 
+// Search filter
 document.getElementById("search").oninput = render;
+
+// Initial render
 render();
