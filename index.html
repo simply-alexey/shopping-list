@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shopping List 🛒</title>
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#66B366">
+  <meta name="theme-color" content="#FFFFFF">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -31,6 +31,36 @@
         <input id="search" type="text" placeholder="Search items...">
       </div>
     </footer>
+  </div>
+
+  <!-- Modal Overlay for Adding Item -->
+  <div id="modalOverlay" class="hidden">
+    <div id="modal">
+      <h3>Add New Item</h3>
+      <label for="itemName">Item name:</label>
+      <input id="itemName" type="text" placeholder="Enter item name">
+
+      <label for="itemCategory">Category:</label>
+      <select id="itemCategory">
+        <option>Fruits & Vegs</option>
+        <option>Bread & Pastries</option>
+        <option>Milk & Cheese</option>
+        <option>Meat & Fish</option>
+        <option>Ingredients & Spices</option>
+        <option>Grain Products</option>
+        <option>Snacks & Sweets</option>
+        <option>Beverages</option>
+        <option>Household</option>
+        <option>Care & Health</option>
+        <option>Pet Supplies</option>
+        <option>Other Items</option>
+      </select>
+
+      <div class="modal-buttons">
+        <button id="cancelBtn" class="cancel">Cancel</button>
+        <button id="confirmAddBtn" class="confirm">Add</button>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
