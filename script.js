@@ -81,14 +81,19 @@ function render() {
     });
 }
 
-// Add item modal logic
-document.getElementById("addBtnTop").onclick = () =>
+// ✅ Add item modal logic (with event stopPropagation fix)
+document.getElementById("addBtnTop").onclick = (e) => {
+  e.stopPropagation(); // prevent bubbling to card layer
   document.getElementById("modalOverlay").classList.add("active");
+};
 
-document.getElementById("cancelBtn").onclick = () =>
+document.getElementById("cancelBtn").onclick = (e) => {
+  e.stopPropagation();
   document.getElementById("modalOverlay").classList.remove("active");
+};
 
-document.getElementById("confirmAddBtn").onclick = () => {
+document.getElementById("confirmAddBtn").onclick = (e) => {
+  e.stopPropagation();
   const name = document.getElementById("itemName").value.trim();
   const category = document.getElementById("itemCategory").value;
   if (!name) return alert("Please enter an item name.");
