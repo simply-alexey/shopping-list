@@ -41,6 +41,7 @@ h2 {
 
 /* 🟢 Increased card font size */
 .card {
+  position: relative; /* ✅ ensures delete button stays within card */
   background: #E67366;
   color: white;
   border-radius: 12px;
