@@ -1,31 +1,93 @@
 body {
   font-family: system-ui, -apple-system, sans-serif;
   margin: 0;
-  padding: 20px;
-  background: #fafafa;
+  background: #FFFFFF;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
-h1 { text-align: center; margin-bottom: 15px; }
-h2 { margin-top: 25px; margin-bottom: 10px; }
-#addItem {
-  display: flex; flex-wrap: wrap; gap: 8px;
-  margin-top: 20px; justify-content: center;
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
 }
-#addItem input, #addItem select {
-  padding: 8px; font-size: 16px;
+
+h1 {
+  font-size: 1.4rem;
+  margin: 0;
+  text-align: center;
 }
-#addBtn {
-  background: #66B366; color: white; border: none;
-  padding: 10px 18px; border-radius: 6px; cursor: pointer;
+
+.roundBtn {
+  position: absolute;
+  right: 16px;
+  top: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #66B366;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
+
+main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 16px;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
 .card {
-  background: #E67366; color: white; border-radius: 12px;
-  padding: 12px; margin: 6px 0; text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: 0.3s;
+  background: #E67366;
+  color: white;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 6px 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: 0.3s;
 }
-.card.selected { background: #66B366; }
-.details { font-size: 0.9em; opacity: 0.9; margin-top: 4px; }
-input#search {
-  display: block; width: 100%; padding: 10px; margin-bottom: 15px;
-  border: 1px solid #ccc; border-radius: 6px;
+
+.card.selected {
+  background: #66B366;
+}
+
+.details {
+  font-size: 0.9em;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+footer {
+  padding: 10px 0 16px 0;
+  background: #fff;
+  border-top: 1px solid #ddd;
+}
+
+#searchContainer {
+  display: flex;
+  justify-content: center;
+}
+
+#search {
+  width: calc(100% - 40px);
+  max-width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
 }
