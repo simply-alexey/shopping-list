@@ -1,5 +1,10 @@
 const STORAGE_KEY = "shoppingItems";
-let items = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+let items = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [
+  { id: Date.now(), name: "Bananas", category: "Fruits & Vegs", isSelected: false },
+  { id: Date.now() + 1, name: "Fish", category: "Meat & Fish", isSelected: false },
+  { id: Date.now() + 2, name: "Milk", category: "Milk & Cheese", isSelected: false }
+  { id: Date.now() + 3, name: "Apple juice", category: "Beverages", isSelected: false }
+];
 const save = () => localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
 function vibrate() { if (navigator.vibrate) navigator.vibrate(30); }
 
